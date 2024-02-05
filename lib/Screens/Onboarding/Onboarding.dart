@@ -1,22 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:voting/Screens/Onboarding/first_screen.dart';
 import 'package:voting/Screens/Onboarding/fourth_screen.dart';
+
 import 'package:voting/Screens/Onboarding/second_screen.dart';
 import 'package:voting/Screens/Onboarding/thrird_screen.dart';
 import 'package:voting/Shared/Colors.dart';
 import 'package:voting/Shared/Fonts.dart';
 
-class OnboardingScreen1 extends StatefulWidget {
-  const OnboardingScreen1({super.key});
+class onboarding extends StatefulWidget {
+  const onboarding({super.key});
 
   @override
-  State<OnboardingScreen1> createState() => _OnboardingScreen1State();
+  State<onboarding> createState() => _onboardingState();
 }
 
-class _OnboardingScreen1State extends State<OnboardingScreen1> {
+class _onboardingState extends State<onboarding> {
   final PageController _controller = PageController(initialPage: 0);
-
   int currentPage = 0;
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _nextPage() {
+    setState(() {
+      currentPage++;
+    });
+  }
+
+  void _skip() {
+    setState(() {
+      currentPage = 2;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,66 +45,36 @@ class _OnboardingScreen1State extends State<OnboardingScreen1> {
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
             gradient: LinearGradient(
-                colors: [Color(0xFFC8E6E0), Color(0xFFBBCDCA)],
+                colors: [
+                  Color(0xFFC8E6E0),
+                  Color(0xFFBBCDCA),
+                ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                stops: [
-                  0.4,
-                  0.7,
-                ])),
+                stops: [0.4, 0.7])),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('Are you ready to vote?',
-                style: AppFonts.semiBoldText(fontSize: 24)),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.016,
+              height: MediaQuery.of(context).size.height * 0.75,
+              child: PageView(
+                controller: _controller,
+                children: const [
+                  OnboardingScreen1(),
+                  OnboardingScreen2(),
+                  OnboardingScreen3(),
+                  OnboardingScreen4(),
+                ],
+              ),
             ),
-            Text(
-              'Welcome to ballotchain, the app that makes',
-              style: AppFonts.regularText(
-                  fontSize: 16, color: AppColors.secondaryTextColor),
-            ),
-            Text(
-              'voting secure & transparent.Take part in',
-              style: AppFonts.regularText(
-                  fontSize: 16, color: AppColors.secondaryTextColor),
-            ),
-            Text(
-              'elections,wherever you are.',
-              style: AppFonts.regularText(
-                  fontSize: 16, color: AppColors.secondaryTextColor),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.087,
-            ),
-            const Image(
-              image: AssetImage('assets/images/Group 632.png'),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.087,
-            ),
-            // PageView(
-            //   controller: _controller,
-            //   onPageChanged: (page) {
-            //     currentPage = page;
-            //   },
-            //   children: const [
-            //     OnboardingScreen1(),
-            //     OnboardingScreen2(),
-            //     OnboardingScreen3(),
-            //     OnboardingScreen4(),
-            //   ],
-            // ),
             SmoothPageIndicator(
               controller: _controller,
               count: 4,
               effect: SwapEffect(
                 activeDotColor: AppColors.mainColor,
                 dotColor: Colors.white,
-                dotHeight: 5,
-                dotWidth: 5,
+                spacing: 5,
+                dotHeight: 6,
+                dotWidth: 6,
               ),
               onDotClicked: (index) {
                 _controller.animateToPage(index,
@@ -97,7 +86,15 @@ class _OnboardingScreen1State extends State<OnboardingScreen1> {
               height: MediaQuery.of(context).size.height * 0.024,
             ),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) =>
+                          const OnboardingScreen3(),
+                    ),
+                  );
+                },
                 style: ButtonStyle(
                   backgroundColor:
                       MaterialStateProperty.all<Color>(Colors.white),
@@ -118,12 +115,22 @@ class _OnboardingScreen1State extends State<OnboardingScreen1> {
                       fontSize: 16, color: AppColors.mainColor),
                 )),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.024,
+              height: MediaQuery.of(context).size.height * 0.001,
             ),
-            Text(
-              'Skip',
-              style: AppFonts.regularText(
-                  fontSize: 16, color: AppColors.secondaryTextColor),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute<void>(
+                      builder: (BuildContext context) =>
+                          const OnboardingScreen4()),
+                );
+              },
+              child: Text(
+                'Skip',
+                style: AppFonts.regularText(
+                    fontSize: 16, color: AppColors.secondaryTextColor),
+              ),
             ),
           ],
         ),
