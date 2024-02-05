@@ -25,18 +25,6 @@ class _onboardingState extends State<onboarding> {
     super.dispose();
   }
 
-  void _nextPage() {
-    setState(() {
-      currentPage++;
-    });
-  }
-
-  void _skip() {
-    setState(() {
-      currentPage = 2;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
