@@ -3,8 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppFonts {
   static TextStyle regularText(
-      {double fontSize = 16.0, Color color = Colors.black}) {
+      {double fontSize = 16.0, Color color = Colors.black, double? height}) {
     return TextStyle(
+      height: height,
       fontSize: fontSize,
       color: color,
       fontWeight: FontWeight.w400,
@@ -12,8 +13,9 @@ class AppFonts {
   }
 
   static TextStyle boldText(
-      {double fontSize = 16.0, Color color = Colors.black}) {
+      {double fontSize = 16.0, Color color = Colors.black, double? height}) {
     return TextStyle(
+      height: height,
       fontSize: fontSize,
       color: color,
       fontWeight: FontWeight.w700,
@@ -21,8 +23,9 @@ class AppFonts {
   }
 
   static TextStyle semiBoldText(
-      {double fontSize = 16.0, Color color = Colors.black}) {
+      {double fontSize = 16.0, Color color = Colors.black, double? height}) {
     return TextStyle(
+      height: height,
       fontSize: fontSize,
       color: color,
       fontWeight: FontWeight.w600, // semi-bold
