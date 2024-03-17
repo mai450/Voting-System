@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:voting/Screens/voteingScreen/voteing_screen.dart';
+import 'package:voting/Screens/Splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: VoteingScreenn(),
+      home: SplashScreen(),
     );
   }
 }

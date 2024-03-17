@@ -8,4 +8,5 @@ class AppColors {
   static Color secondaryTextColor = const Color(0xFF777272);
   static Color borderColor = const Color(0xFFC7C7C7);
   static Color navigationBarColor = const Color(0xFF4F4F4F);
+  static Color tabBarColor = const Color(0xFFD7F8EB);
 }

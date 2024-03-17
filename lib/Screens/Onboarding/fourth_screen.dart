@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:voting/Screens/Home/Home_Screen.dart';
+import 'package:voting/Screens/Home/Home_page_of_nomination/Home1.dart';
 import 'package:voting/Shared/Colors.dart';
 import 'package:voting/Shared/Fonts.dart';
-import 'package:voting/Shared/Onboarding_Page.dart';
+import 'package:voting/Screens/Onboarding/Custom_Onboarding/Onboarding_Page.dart';
 
 class OnboardingScreen4 extends StatelessWidget {
   const OnboardingScreen4({super.key});
@@ -66,7 +67,7 @@ class OnboardingScreen4 extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute<void>(
-                        builder: (BuildContext context) => const Home(),
+                        builder: (BuildContext context) => Home_Screen(),
                       ),
                     );
                   },
