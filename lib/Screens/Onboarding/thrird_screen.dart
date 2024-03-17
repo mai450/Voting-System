@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:voting/Screens/Onboarding/fourth_screen.dart';
 import 'package:voting/Shared/Colors.dart';
 import 'package:voting/Shared/Fonts.dart';
-import 'package:voting/Shared/Onboarding_Page.dart';
+import 'package:voting/Screens/Onboarding/Custom_Onboarding/Onboarding_Page.dart';
 
 class OnboardingScreen3 extends StatefulWidget {
   const OnboardingScreen3({super.key});
