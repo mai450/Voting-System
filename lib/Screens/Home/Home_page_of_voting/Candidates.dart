@@ -92,13 +92,13 @@ class _CandidatesState extends State<Candidates> {
                       backgroundColor: Color.fromARGB(0, 255, 255, 255),
                       elevation: 0,
                       onPressed: () {
-                        setState(() {
-                          if (_controller.value.isPlaying) {
-                            _controller.pause();
-                          } else {
-                            _controller.play();
-                          }
-                        });
+                        // setState(() {
+                        //   if (_controller.value.isPlaying) {
+                        //     _controller.pause();
+                        //   } else {
+                        //     _controller.play();
+                        //   }
+                        // });
                       },
                       child: Icon(
                         _controller.value.isPlaying

@@ -122,7 +122,7 @@ class _row2_in_profileState extends State<row2_in_profile> {
             fontSize: 12,
           ),
         ),
-        Spacer(),
+        const Spacer(),
         Switch(
           value: _isSwitched,
           onChanged: (value) {

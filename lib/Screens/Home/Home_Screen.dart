@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:voting/Screens/Home/Home_page_of_nomination/Home1.dart';
 import 'package:voting/Screens/Home/Home_page_of_voting/Home2.dart';
 import 'package:voting/Screens/Profile/profile.dart';
-import 'package:voting/Screens/Result/Result.dart';
-import 'package:voting/Screens/Vote/Vote_Screen.dart';
+import 'package:voting/Screens/resultScreen/result_screen.dart';
+import 'package:voting/Screens/voteingScreen/voteing_screen.dart';
 import 'package:voting/Shared/Colors.dart';
 
 class Home_Screen extends StatefulWidget {
@@ -16,8 +17,8 @@ class _Home_ScreenState extends State<Home_Screen> {
   int _selectedIndex = 0;
   static final List<Widget> items_clicked = <Widget>[
     const Home2(),
-    const Vote(),
-    const result(),
+    const VoteingScreenn(),
+    const ResultScreen(),
     const profile(),
   ];
 

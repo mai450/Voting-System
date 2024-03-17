@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:voting/Screens/Home/Home_Screen.dart';
-import 'package:voting/Screens/Onboarding/Onboarding.dart';
 import 'package:voting/Screens/Splash/splash_screen.dart';
 
 void main() {
@@ -14,6 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: Home_Screen());
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
+    );
   }
 }
